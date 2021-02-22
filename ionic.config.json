@@ -1,0 +1,7 @@
+{
+  "name": "loginFinance",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

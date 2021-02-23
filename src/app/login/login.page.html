@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+ <div lass="logo" id="logo">
+  <ion-list> 
+    <ion-img class="logo" id="logo" src="../assets/icon/logo.png"></ion-img>
+  </ion-list>
+ </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="Password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
+  
+  <ion-button fill="solid" expand="block" [routerLink]="['/menu']">Login</ion-button>
+  <ion-button [routerLink]="['/registration']" expand="block" color="danger">Cadastrar</ion-button>
+</ion-content>

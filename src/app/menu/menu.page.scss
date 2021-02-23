@@ -1,0 +1,15 @@
+.resumoRow {
+    align-items: flex-end;
+    font-size: x-large;
+    color: white;
+    background-color: darkgrey;  
+    padding: 0;
+}
+
+.rusumoDiv {
+    align-items: center;
+}
+
+ion-grid {
+    --ion-grid-padding: 0;    
+}

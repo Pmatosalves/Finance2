@@ -1,3 +1,4 @@
+import { MenuController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -10,12 +11,22 @@ export class LoginPage implements OnInit {
   
   username: string = ""
   password: string = ""
-  
-  constructor() { }
+  tipo: boolean;
+  constructor(public menu: MenuController) { }
 
   login(){
     alert(this.password)
     const {username, password} = this
+  }
+
+  ionViewDidEnter(){
+   this.menu.enable(false)
+  }
+  ionViewCanLeave(){
+   this.menu.enable(true)
+  }
+  exibirPassword(){
+    this.tipo = !this.tipo
   }
   ngOnInit() {
   }

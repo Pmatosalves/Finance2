@@ -1,12 +1,28 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Despesa</ion-title>
+      <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+    <ion-title>Despesas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
-</ion-content>
+  <ion-content fullscreen>
+    <ion-list>
+      <ion-item>
+        <ion-label>Tipo Despesa:</ion-label>
+        <ion-select value="notifications" interface="popover">
+          <ion-select-option value="Mercado">Mercado</ion-select-option>
+          <ion-select-option value="Luz">Luz</ion-select-option>
+          <ion-select-option value="Água">Água</ion-select-option>
+          <ion-select-option value="Internet">Internet</ion-select-option>
+          <ion-select-option value="Celular">Celular</ion-select-option>
+          <ion-select-option value="Farmácia">Farmácia</ion-select-option>
+          <ion-select-option value="Posto de Gaslosina">Posto de Combustível</ion-select-option>
+          <ion-select-option value="Cartão">Cartão</ion-select-option>
+          <ion-select-option value="Lazer">Lazer</ion-select-option>
+          <ion-select-option value="Outros">Outros</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-content>

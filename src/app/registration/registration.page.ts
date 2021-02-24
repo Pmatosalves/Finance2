@@ -1,3 +1,4 @@
+import { MenuController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.page.scss'],
 })
 export class RegistrationPage implements OnInit {
-
-  constructor() { }
+  tipo: boolean;
+  password: string = ""
+  constructor(public menu: MenuController) { }
 
   ngOnInit() {
   }
 
+  ionViewDidEnter(){
+    this.menu.enable(false)
+   }
+   exibirPassword1(){
+    this.tipo = !this.tipo
+  }
 }

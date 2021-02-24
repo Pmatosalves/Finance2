@@ -1,7 +1,6 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Cadastro</ion-title>
   </ion-toolbar>
@@ -23,12 +22,20 @@
     </ion-item>
     
     <ion-item lines="full">
-      <ion-input placeholder="Digite sua senha" type="password" required></ion-input>
+      <ion-input placeholder="Digite sua senha" [type]="tipo ? 'text':'password'" required></ion-input>
+      <button (click)="exibirPassword1()" style="align-items: flex-start;">
+        <ion-icon [name]="tipo ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+      </button>
     </ion-item>
   
     <ion-row>
       <ion-col>
         <ion-button type="submit" color="danger" expand="block">Cadastar</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-title [routerLink]="['/login']" style="font-size: small;">Já tenho conta</ion-title>
       </ion-col>
     </ion-row>
   </form>

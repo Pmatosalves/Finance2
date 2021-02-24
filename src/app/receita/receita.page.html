@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+    <ion-title style="font-size: medium;">Laçamento de Receita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content fullscreen>
+    <ion-list>
+      <ion-item>
+        <ion-label>Tipo de Receita:</ion-label>
+        <ion-select value="notifications" interface="popover">
+          <ion-select-option value="Salário">Salário</ion-select-option>
+          <ion-select-option value="Investimentos">Investimentos</ion-select-option>
+          <ion-select-option value="Receita Extra">Receita Extra</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Valor</ion-label>
+        <ion-input type="number" name="valorOld" ></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-content>

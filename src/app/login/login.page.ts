@@ -1,5 +1,7 @@
+import { User } from './../interfaces/user';
 import { MenuController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
 
 
 @Component({
@@ -9,14 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
   
-  username: string = ""
-  password: string = ""
+  public userLogin: User = {};
+ 
+
   tipo: boolean;
   constructor(public menu: MenuController) { }
 
   login(){
-    alert(this.password)
-    const {username, password} = this
+    console.log(this.userLogin)
   }
 
   ionViewDidEnter(){

@@ -1,3 +1,6 @@
+<form formGroup="registerForm">
+
+</form>
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -7,22 +10,21 @@
 </ion-header>
 
 <ion-content>
-  <form>
 
-    <ion-item lines="full">
-      <ion-input placeholder="Nome Completo" type="text" required></ion-input>
+    <ion-item >
+      <ion-input [(ngModel)]="registrationUser.username" placeholder="Nome Completo" type="text" required ></ion-input>
     </ion-item>
 
-    <ion-item lines="full">
-      <ion-input placeholder="Digite seu email" type="email" required></ion-input>
+    <ion-item>
+      <ion-input [(ngModel)]="registrationUser.email" placeholder="Digite seu email" type="email" required ></ion-input>
     </ion-item>
 
-    <ion-item lines="full">
-      <ion-input placeholder="Digite seu celular" type="number" required></ion-input>
+    <ion-item>
+      <ion-input [(ngModel)]="registrationUser.celular" placeholder="Digite seu celular" type="number" required ></ion-input>
     </ion-item>
     
-    <ion-item lines="full">
-      <ion-input placeholder="Digite sua senha" [type]="tipo ? 'text':'password'" required></ion-input>
+    <ion-item>
+      <ion-input [(ngModel)]="registrationUser.password" placeholder="Digite sua senha" [type]="tipo ? 'text':'password'" required></ion-input>
       <button (click)="exibirPassword1()" style="align-items: flex-start;">
         <ion-icon [name]="tipo ? 'eye-outline' : 'eye-off-outline' "></ion-icon>
       </button>
@@ -30,7 +32,7 @@
   
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Cadastar</ion-button>
+        <ion-button type="submit" color="danger" expand="block" (click)="Cadastar()">Cadastar</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -38,5 +40,5 @@
         <ion-title [routerLink]="['/login']" style="font-size: small;">Já tenho conta</ion-title>
       </ion-col>
     </ion-row>
-  </form>
+
 </ion-content>

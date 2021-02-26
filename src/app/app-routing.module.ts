@@ -28,6 +28,10 @@ const routes: Routes = [
     path: 'receita',
     loadChildren: () => import('./receita/receita.module').then( m => m.ReceitaPageModule)
   },
+  {
+    path: 'adicionar-receita',
+    loadChildren: () => import('./adicionar-receita/adicionar-receita.module').then( m => m.AdicionarReceitaPageModule)
+  },
  
 ];
 

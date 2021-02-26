@@ -1,6 +1,7 @@
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from './../services/auth.service';
 import { User } from './../interfaces/user';
-import { MenuController, LoadingController, ToastController } from '@ionic/angular';
+import { MenuController, LoadingController, ToastController, AlertController, NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -19,11 +20,29 @@ export class LoginPage implements OnInit {
     public menu: MenuController,
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
-    private AuthService: AuthService) { }
+    private AuthService: AuthService,
+    private afa: AngularFireAuth,
+    public navCtrl: NavController,
+    public alertCtrl: AlertController) { }
 
-  
+ /*   login(){
+      this.afa.signInWithEmailAndPassword(this.userLogin.email, 
+        this.userLogin.password).then(() => {
+          this.navCtrl.navigateRoot('resumo')
+
+        })
+    }
+ */
+    
+ 
   async login() {
     console.log(this.userLogin)
+    this.afa.signInWithEmailAndPassword(this.userLogin.email, 
+      this.userLogin.password).then(() => {
+        this.presentAlert('Usuário autenticado', '')
+        this.navCtrl.navigateRoot('resumo')
+
+      })
     await this.presentLoading();
 
     try {
@@ -33,6 +52,16 @@ export class LoginPage implements OnInit {
     } finally {
       this.loading.dismiss();
     }
+  }
+
+  async presentAlert(titles: string, subtitle: string) {
+    const alert = await this.alertCtrl.create({
+      header: titles,
+      message: subtitle,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
   
   async presentLoading() {
